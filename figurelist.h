@@ -18,6 +18,7 @@ public:
     void moveLeft(float shift);
     void moveRight(float shift);
     void draw(CL_GraphicContext gc);
+    void drop(BorderList borderlist);
     void rotateClockwise();
     FigureList previewRotationClockwise();
     FigureList previewRotationCounterClockwise();

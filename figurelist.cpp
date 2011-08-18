@@ -357,4 +357,11 @@ bool FigureList::checkCollisionDown(BorderList borderlist)
     return false;
 }
 
+void FigureList::drop(BorderList borderlist)
+{
+    while(!checkCollisionDown(borderlist))
+    {
+        moveDown(5.0f);
+    }
 
+}
