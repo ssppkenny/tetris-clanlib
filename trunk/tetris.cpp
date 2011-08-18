@@ -128,7 +128,11 @@ void Tetris::on_input_up(const CL_InputEvent &key, const CL_InputState &state)
         quit = true;
     }
 
+    if (key.id == CL_KEY_CONTROL)
+    {
+        figlist.drop(bottomborderlist);
 
+    }
 
 
     if(key.id == CL_KEY_LEFT && !figlist.checkCollisionLeftSide(leftborderlist))
