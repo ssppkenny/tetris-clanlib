@@ -54,24 +54,27 @@ void FigureList::reset()
     srand((unsigned)time(0));
     int random_integer = rand()%5;
     std::cout << random_integer << std::endl;
-
-    int rnd_integer = rand()%3;
+    srand((unsigned)time(0));
+    int rnd_integer = rand()%4;
 
     std::cout << rnd_integer << std::endl;
-    clr = CL_Colorf(125.0f, 125.0f, 125.0f);
+    clr = CL_Colorf::grey;
     switch (rnd_integer)
     {
         case 0:
-          clr = CL_Colorf(255.0f,0.0f,0.0f);
+          clr = CL_Colorf::red;
           break;
         case 1:
-          clr = CL_Colorf(0.0f,255.0f,0.0f);
+          clr = CL_Colorf::green;
           break;
         case 2:
-          clr = CL_Colorf(0.0f,0.0f,0.255f);
+          clr = CL_Colorf::blue;
+          break;
+        case 3:
+          clr = CL_Colorf::grey;
           break;
         default:
-          clr = CL_Colorf(125.0f, 125.0f, 125.0f);
+          clr = CL_Colorf::blue;
           break;
 
     }
