@@ -14,4 +14,5 @@ void LeftBorderList::init(float coord)
 LeftBorderList::LeftBorderList()
 {
     init(-32);
+    // new line
 }
