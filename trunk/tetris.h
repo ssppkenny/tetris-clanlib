@@ -50,6 +50,7 @@ private:
     LeftBorderList leftborderlist;
     RightBorderList rightborderlist;
     BottomBorderList bottomborderlist;
+    int linesRemoved;
 
 
 
