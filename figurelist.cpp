@@ -365,3 +365,13 @@ void FigureList::drop(BorderList borderlist)
     }
 
 }
+
+bool FigureList::checkPosition()
+{
+    std::vector<Figure>::iterator iter;
+    for (iter = fl.begin(); iter != fl.end(); iter++)
+    {
+
+    }
+
+}

@@ -33,6 +33,7 @@ public:
     void setStablePosition();
     CL_Colorf getColor();
     void setColor(CL_Colorf);
+    bool checkPosition();
 };
 
 
