@@ -84,7 +84,13 @@ int Tetris::start(const std::vector<CL_String> &args)
 
 
         int l = bottomborderlist.getLineNumberToDelete();
-        bottomborderlist.removeLine(l);
+        while (l != -1)
+        {
+            l = bottomborderlist.getLineNumberToDelete();
+            bottomborderlist.removeLine(l);
+
+        }
+
 
 
         if (!figlist.checkCollisionDown(bottomborderlist))
