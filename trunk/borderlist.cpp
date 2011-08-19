@@ -68,15 +68,31 @@ int BorderList::getLineNumberToDelete()
 
 
     std::map<int,int>::iterator iter1;
+    std::vector<int> lines;
+    std::vector<int>::iterator iter2;
     for (iter1=mymap.begin(); iter1!=mymap.end(); iter1++ )
     {
         if ((*iter1).second == 10)
         {
-            ret = (*iter1).first;
+            lines.push_back((*iter1).first);
         }
     }
 
-    return ret;
+
+    int max = -100;
+
+    for (iter2=lines.begin(); iter2!=lines.end(); iter2++)
+    {
+        if ((*iter2) >= max)
+        {
+            max = (*iter2);
+        }
+    }
+
+    if (max == -100)
+      return -1;
+    else
+      return max;
 
 
 }
@@ -101,7 +117,7 @@ void BorderList::removeLine(int i)
         }
       for (iter=newfence.begin(); iter!=newfence.end(); iter++ )
       {
-           if ((*iter).ypos != 640)
+           if ((*iter).ypos != 640 && (*iter).ypos < i)
            {
                (*iter).ypos += 32;
            }
