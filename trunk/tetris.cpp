@@ -36,6 +36,7 @@
 int Tetris::start(const std::vector<CL_String> &args)
 {
     quit = false;
+    finish = false;
 
 //    leftborderlist = new LeftBordeList();
  //   rightbordelist = new RightBordeList();
@@ -85,6 +86,8 @@ int Tetris::start(const std::vector<CL_String> &args)
         if (!figlist.checkCollisionDown(bottomborderlist))
         {
             figlist.moveDown(shift);
+
+
         }
         else
         {
@@ -93,16 +96,36 @@ int Tetris::start(const std::vector<CL_String> &args)
             bottomborderlist.addList(newfl.getFigureList());
             //leftborderlist.addList(newfl.getFigureList());
             //rightborderlist.addList(newfl.getFigureList());
-            figlist.reset();
+            if (!finish)
+            {
+                figlist.reset();
+            }
+
+
+            if (figlist.checkCollisionDown(bottomborderlist))
+            {
+                std::cout << "Collision detected" << std::endl;
+                finish  = true;
+            }
+
+
 
         }
 
+        if (finish == true)
+        {
+            leftborderlist.draw(gc);
+            rightborderlist.draw(gc);
+            bottomborderlist.draw(gc);
+        }
+        else
+        {
+            figlist.draw(gc);
+            leftborderlist.draw(gc);
+            rightborderlist.draw(gc);
+            bottomborderlist.draw(gc);
+        }
 
-
-        figlist.draw(gc);
-        leftborderlist.draw(gc);
-        rightborderlist.draw(gc);
-        bottomborderlist.draw(gc);
 
 
 

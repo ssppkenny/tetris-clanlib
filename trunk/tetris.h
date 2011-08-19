@@ -45,6 +45,7 @@ private:
 
 private:
     bool quit;
+    bool finish;
     FigureList figlist;
     LeftBorderList leftborderlist;
     RightBorderList rightborderlist;
