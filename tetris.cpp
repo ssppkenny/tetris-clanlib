@@ -67,6 +67,9 @@ int Tetris::start(const std::vector<CL_String> &args)
 
     unsigned int last_time = CL_System::get_time();
 
+    CL_Font font(gc, "Utopia", 40);
+    linesRemoved = 0;
+
     // Run until someone presses escape
     while (!quit)
     {
@@ -81,13 +84,19 @@ int Tetris::start(const std::vector<CL_String> &args)
         // Clear the display in a dark blue nuance
         // The four arguments are red, green, blue and alpha
         gc.clear(CL_Colorf(25.0f,25.0f,25.0f));
-
+        std::string s;
+        std::stringstream out;
+        out << linesRemoved / 2;
+        s = out.str();
+        font.draw_text(gc, 250,40, s.c_str(), CL_Colorf::blue);
 
         int l = bottomborderlist.getLineNumberToDelete();
         while (l != -1)
         {
             l = bottomborderlist.getLineNumberToDelete();
+
             bottomborderlist.removeLine(l);
+            linesRemoved++;
 
         }
 
@@ -127,6 +136,7 @@ int Tetris::start(const std::vector<CL_String> &args)
             leftborderlist.draw(gc);
             rightborderlist.draw(gc);
             bottomborderlist.draw(gc);
+
         }
         else
         {
