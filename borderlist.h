@@ -3,6 +3,9 @@
 #include "precomp.h"
 #include "figure.h"
 
+
+
+
 class BorderList
 {
     public:
@@ -11,6 +14,9 @@ class BorderList
       BorderList(float coord);
       void draw(CL_GraphicContext gc);
       void addList(std::vector<Figure>);
+      int getLineNumberToDelete();
+      void removeLine(int i);
+
 };
 
 

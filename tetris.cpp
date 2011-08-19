@@ -83,6 +83,10 @@ int Tetris::start(const std::vector<CL_String> &args)
         gc.clear(CL_Colorf(25.0f,25.0f,25.0f));
 
 
+        int l = bottomborderlist.getLineNumberToDelete();
+        bottomborderlist.removeLine(l);
+
+
         if (!figlist.checkCollisionDown(bottomborderlist))
         {
             figlist.moveDown(shift);
@@ -125,6 +129,8 @@ int Tetris::start(const std::vector<CL_String> &args)
             rightborderlist.draw(gc);
             bottomborderlist.draw(gc);
         }
+
+
 
 
 
