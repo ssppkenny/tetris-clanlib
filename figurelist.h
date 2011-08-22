@@ -23,9 +23,6 @@ public:
     FigureList previewRotationClockwise();
     FigureList previewRotationCounterClockwise();
     void rotateCounterClockwise();
-    bool checkHorizontalCollision(BorderList borderlist);
-    bool checkVerticalCollision(BorderList borderlist);
-    bool checkCollision(BorderList borderlist);
     bool checkCollisionRightSide(BorderList borderlist);
     bool checkCollisionLeftSide(BorderList borderlist);
     bool checkCollisionDown(BorderList borderlist);

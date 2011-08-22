@@ -91,12 +91,17 @@ int Tetris::start(const std::vector<CL_String> &args)
         font.draw_text(gc, 250,40, s.c_str(), CL_Colorf::blue);
 
         int l = bottomborderlist.getLineNumberToDelete();
+        std::cout << "l = " << l << std::endl;
         while (l != -1)
         {
             l = bottomborderlist.getLineNumberToDelete();
             if (l!= -1)
             {
-                linesRemoved++;
+                if (!bottomborderlist.isFullHeight())
+                {
+                    linesRemoved++;
+                }
+
             }
             bottomborderlist.removeLine(l);
 
@@ -196,7 +201,7 @@ void Tetris::on_input_up(const CL_InputEvent &key, const CL_InputState &state)
         figlist.moveRight(32.0f);
     }
 
-    if (key.id == CL_KEY_SPACE && !figlist.previewRotationClockwise().checkCollisionRightSide(rightborderlist)  && !figlist.previewRotationClockwise().checkCollisionLeftSide(leftborderlist))
+    if (key.id == CL_KEY_SPACE && !figlist.previewRotationClockwise().checkCollisionRightSide(rightborderlist)  && !figlist.previewRotationClockwise().checkCollisionLeftSide(leftborderlist)  && !figlist.previewRotationClockwise().checkCollisionDown(leftborderlist))
     {
         figlist.rotateClockwise();
     }
