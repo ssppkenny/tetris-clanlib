@@ -16,3 +16,18 @@ BottomBorderList::BottomBorderList()
 {
     init(640.0f);
 }
+
+bool BottomBorderList::isFullHeight()
+{
+    std::vector<Figure>::iterator iter;
+    for (iter=fence.begin(); iter!=fence.end(); iter++ )
+    {
+        if ((int)(*iter).ypos == 0 )
+        {
+            return true;
+        }
+    }
+
+    return false;
+
+}

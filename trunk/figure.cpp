@@ -117,96 +117,6 @@ void Figure::rotateCounterClockwise(std::pair<float, float> center)
 
 }
 
-bool Figure::checkCollision(Figure fig)
-{
-
-int x = fig.xpos;
-int y = fig.ypos;
-
-if ((int)xpos <= (int)x && (int)x <= (int)xpos + 32 && (int)ypos <= (int)y && (int)y <= (int)ypos + 32 )
-{
-
-
-      return true;
-}
-
-x = fig.xpos + 32;
-y = fig.ypos;
-
-if ((int)xpos <= (int)x && (int)x <= (int)xpos + 32 && (int)ypos <= (int)y && (int)y <= (int)ypos + 32  )
-{
-
-      return true;
-}
-
-x = fig.xpos;
-y = fig.ypos + 32;
-
-if ((int)xpos <= (int)x && (int)x <= (int)xpos + 32 && (int)ypos <= (int)y && (int)y <= (int)ypos + 32   )
-{
-
-      return true;
-}
-
-x = fig.xpos + 32;
-y = fig.ypos + 32;
-
-if ((int)xpos <= (int)x && (int)x <= (int)xpos + 32 && (int)ypos <= (int)y && (int)y <= (int)ypos + 32  )
-{
-
-      return true;
-}
-
-
-
-return false;
-
-}
-
-
-bool Figure::checkHorizontalCollision(Figure fig)
-{
-   if (abs(xpos - fig.xpos) <= 32.0f)
-   {
-       std::cout << "xpos = " << xpos << "fig.xpos = " << fig.xpos << std::endl;
-   }
-
-   //std::cout << "fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
-
-    if ( abs(xpos - fig.xpos) <= 32.f )
-    {
-        return true;
-
-    }
-    return false;
-}
-
-
-bool Figure::checkVerticalCollision(Figure fig)
-{
-   if (abs(ypos - fig.ypos) <= 32.0f)
-   {
-       std::cout << "ypos = " << ypos << "fig.ypos = " << fig.ypos << std::endl;
-   }
-
-   //std::cout << "fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
-
-    if ( abs(ypos - fig.ypos) <= 32.f )
-    {
-        return true;
-
-    }
-    return false;
-}
-
-void Figure::setStablePosition()
-{
-    int x = xpos / 32;
-    xpos = x * 32;
-    x = ypos / 32;
-    ypos = x * 32;
-}
-
 
 bool Figure::checkCollisionRightSide(Figure fig)
 {
@@ -392,15 +302,7 @@ if (collision == true)
     {
         collision = true;
     }
-  //  else if (fabs(fig.xpos + 32.0f - xpos) * fabs(ypos_new + 32.0f - fig.ypos) >= 1  && fig.xpos <= xpos)
-  //  {
-  //      collision = true;
-  //  }
 
-   // else if (fabs(fig.xpos + 32.0f - xpos) * fabs(fig.ypos + 32.0f - ypos_new) >= 1  && fig.xpos <= xpos)
-   // {
-   //     collision = true;
-   // }
 
     else
     {
@@ -430,4 +332,13 @@ void Figure::setColor(CL_Colorf color)
 CL_Colorf Figure::getColor()
 {
     return clr;
+}
+
+
+void Figure::setStablePosition()
+{
+    int x = xpos / 32;
+    xpos = x * 32;
+    x = ypos / 32;
+    ypos = x * 32;
 }

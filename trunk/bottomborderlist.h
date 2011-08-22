@@ -8,6 +8,7 @@ class BottomBorderList : public BorderList
     public:
        BottomBorderList();
        void init(float coord);
+       bool isFullHeight();
 
 };
 

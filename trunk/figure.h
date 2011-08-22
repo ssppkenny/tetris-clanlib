@@ -18,9 +18,6 @@ public:
     Figure previewRotationClockwise(std::pair<float, float> center);
     Figure previewRotationCounterClockwise(std::pair<float, float> center);
     void rotateCounterClockwise(std::pair<float, float> center);
-    bool checkHorizontalCollision(Figure fig);
-    bool checkVerticalCollision(Figure fig);
-    bool checkCollision(Figure fig);
     void setStablePosition();
     bool checkCollisionRightSide(Figure fig);
     bool checkCollisionLeftSide(Figure fig);

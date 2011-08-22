@@ -237,65 +237,7 @@ void FigureList::rotateCounterClockwise()
 
 }
 
-bool FigureList::checkHorizontalCollision(BorderList borderlist)
-{
-    std::vector<Figure>::iterator iter1;
-    std::vector<Figure>::iterator iter2;
-    for (iter1 = fl.begin(); iter1 != fl.end(); iter1++)
-    {
-        for (iter2 = borderlist.fence.begin(); iter2 != borderlist.fence.end(); iter2++)
-        {
-            if ((*iter1).checkCollision(*iter2))
-            {
-                return true;
-            }
-        }
-    }
 
-    return false;
-}
-
-
-
-
-
-bool FigureList::checkVerticalCollision(BorderList borderlist)
-{
-
-    std::vector<Figure>::iterator iter1;
-    std::vector<Figure>::iterator iter2;
-    for (iter1 = fl.begin(); iter1 != fl.end(); iter1++)
-    {
-        for (iter2 = borderlist.fence.begin(); iter2 != borderlist.fence.end(); iter2++)
-        {
-            if ((*iter1).checkVerticalCollision(*iter2))
-            {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
-
-
-bool FigureList::checkCollision(BorderList borderlist)
-{
-    std::vector<Figure>::iterator iter1;
-    std::vector<Figure>::iterator iter2;
-    for (iter1 = fl.begin(); iter1 != fl.end(); iter1++)
-    {
-        for (iter2 = borderlist.fence.begin(); iter2 != borderlist.fence.end(); iter2++)
-        {
-            if ((*iter1).checkCollision(*iter2))
-            {
-                return true;
-            }
-        }
-    }
-
-    return false;
-}
 
 void FigureList::setStablePosition()
 {
