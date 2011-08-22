@@ -9,6 +9,7 @@ void LeftBorderList::init(float coord)
         fence.push_back(*fig);
     }
 
+
 }
 
 LeftBorderList::LeftBorderList()

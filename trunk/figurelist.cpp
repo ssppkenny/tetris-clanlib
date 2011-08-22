@@ -201,12 +201,7 @@ FigureList FigureList::previewRotationClockwise()
 {
     std::vector<Figure> ret;
     std::vector<Figure>::iterator iter;
-    for (iter=fl.begin(); iter!=fl.end(); iter++ )
-    {
-        ret.push_back(*iter);
-    }
-
-    FigureList ff(ret);
+    FigureList ff(fl);
     ff.rotateClockwise();
     return ff;
 
@@ -216,12 +211,7 @@ FigureList FigureList::previewRotationCounterClockwise()
 {
     std::vector<Figure> ret;
     std::vector<Figure>::iterator iter;
-    for (iter=fl.begin(); iter!=fl.end(); iter++ )
-    {
-        ret.push_back(*iter);
-    }
-
-    FigureList ff(ret);
+    FigureList ff(fl);
     ff.rotateCounterClockwise();
     return ff;
 
@@ -237,7 +227,22 @@ void FigureList::rotateCounterClockwise()
 
 }
 
-
+bool FigureList::checkCollision(BorderList borderlist)
+{
+    std::vector<Figure>::iterator iter1;
+    std::vector<Figure>::iterator iter2;
+    for (iter1=fl.begin(); iter1!=fl.end(); iter1++ )
+    {
+        for (iter2=borderlist.fence.begin(); iter2!=borderlist.fence.end(); iter2++ )
+        {
+            if ((*iter1).checkCollision(*iter2))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 void FigureList::setStablePosition()
 {
@@ -291,6 +296,24 @@ bool FigureList::checkCollisionDown(BorderList borderlist)
         for (iter2 = borderlist.fence.begin(); iter2 != borderlist.fence.end(); iter2++)
         {
             if ((*iter1).checkCollisionDown(*iter2))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
+bool FigureList::checkCollisionUp(BorderList borderlist)
+{
+    std::vector<Figure>::iterator iter1;
+    std::vector<Figure>::iterator iter2;
+    for (iter1 = fl.begin(); iter1 != fl.end(); iter1++)
+    {
+        for (iter2 = borderlist.fence.begin(); iter2 != borderlist.fence.end(); iter2++)
+        {
+            if ((*iter1).checkCollisionUp(*iter2))
             {
                 return true;
             }

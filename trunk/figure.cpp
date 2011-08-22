@@ -67,10 +67,10 @@ Figure Figure::previewRotationClockwise(std::pair<float, float> center)
     x = y -32.0f;
     y = -temp;
 
-    xpos = x + center.first;
-    ypos = y + center.second;
+    x = x + center.first;
+    y = y + center.second;
 
-    Figure fig(xpos, ypos);
+    Figure fig(x, y);
     return fig;
 
 
@@ -324,6 +324,84 @@ if (collision == true)
 
 
 
+bool Figure::checkCollisionUp(Figure fig)
+{
+    int x = (fig.xpos/32)*32;
+    int y = (fig.ypos/32)*32;
+    int x1 = (xpos/32)*32;
+    int y1 = (ypos/32)*32;
+    bool collision = false;
+
+
+if ((int)x1 <= x && x <= (int)x1 + 32 && (int)y1 <= y && y <= (int)y1 + 32  )
+{
+   collision = true;
+}
+
+x = fig.xpos + 32;
+y = fig.ypos;
+
+if ((int)x1 <= x && x <= (int)x1 + 32 && (int)y1 <= y && y <= (int)y1 + 32  )
+{
+
+      collision = true;
+}
+
+x = fig.xpos;
+y = fig.ypos + 32;
+
+if ((int)x1 <= x && x <= (int)x1 + 32 && (int)y1 <= y && y <= (int)y1 + 32  )
+{
+
+      collision = true;
+}
+
+x = fig.xpos + 32;
+y = fig.ypos + 32;
+
+if ((int)x1 <= x && x <= (int)x1 + 32 && (int)y1 <= y && y <= (int)y1 + 32  )
+{
+
+      collision = true;
+}
+
+
+
+
+if (collision == true)
+{
+    float ypos_new = ypos - 0.1f;
+
+    std::cout << "xpos = " << xpos << " ypos = " << ypos << " fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
+
+    if (fabs(xpos + 32.0f - fig.xpos) * fabs(ypos_new + 32.0f - fig.ypos) >= 1 && xpos <= fig.xpos)
+    {
+        collision = true;
+    }
+
+
+    else
+    {
+        collision = false;
+    }
+
+     std::cout << "The Values = " << fabs(xpos + 32.0f - fig.xpos) << " " <<  fabs(ypos_new + 32.0f - fig.ypos)  << std::endl;
+
+}
+
+
+if (collision == true)
+{
+      return true;
+}
+
+    return false;
+}
+
+
+
+
+
 void Figure::setColor(CL_Colorf color)
 {
     clr = color;
@@ -341,4 +419,21 @@ void Figure::setStablePosition()
     xpos = x * 32;
     x = ypos / 32;
     ypos = x * 32;
+}
+
+bool Figure::checkCollision(Figure fig)
+{
+    float x1 = xpos;
+    float y1 = ypos;
+
+    float x2 = fig.xpos;
+    float y2 = fig.ypos;
+
+    if ( fabs(x1 - x2) < 32.0f || fabs(y1 - y2) < 32.0f )
+    {
+
+        return true;
+    }
+
+    return false;
 }
