@@ -379,41 +379,7 @@ if ((int)x1 <= x && x <= (int)x1 + 32 && (int)y1 <= y && y <= (int)y1 + 32  )
       collision = true;
 }
 
-x = fig.xpos;
-y = fig.ypos;
 
-
-if ((int)x <= x1 && x1 <= (int)x + 32 && (int)y <= y1 && y1 <= (int)y + 32  )
-{
-   collision = true;
-}
-
-x = fig.xpos + 32;
-y = fig.ypos;
-
-if ((int)x <= x1 && x1 <= (int)x + 32 && (int)y <= y1 && y1 <= (int)y + 32  )
-{
-
-      collision = true;
-}
-
-x = fig.xpos;
-y = fig.ypos + 32;
-
-if ((int)x <= x1 && x1 <= (int)x + 32 && (int)y <= y1 && y1 <= (int)y + 32  )
-{
-
-      collision = true;
-}
-
-x = fig.xpos + 32;
-y = fig.ypos + 32;
-
-if ((int)x <= x1 && x1 <= (int)x + 32 && (int)y <= y1 && y1 <= (int)y + 32  )
-{
-
-      collision = true;
-}
 
 
 if (collision == true)
