@@ -22,6 +22,8 @@ public:
     bool checkCollisionRightSide(Figure fig);
     bool checkCollisionLeftSide(Figure fig);
     bool checkCollisionDown(Figure fig);
+    bool checkCollisionUp(Figure fig);
+    bool checkCollision(Figure fig);
     void setColor(CL_Colorf color);
     CL_Colorf getColor();
 };

@@ -201,7 +201,7 @@ void Tetris::on_input_up(const CL_InputEvent &key, const CL_InputState &state)
         figlist.moveRight(32.0f);
     }
 
-    if (key.id == CL_KEY_SPACE && !figlist.previewRotationClockwise().checkCollisionRightSide(rightborderlist)  && !figlist.previewRotationClockwise().checkCollisionLeftSide(leftborderlist)  && !figlist.previewRotationClockwise().checkCollisionDown(leftborderlist))
+    if (key.id == CL_KEY_SPACE && !figlist.previewRotationClockwise().checkCollision(leftborderlist) && !figlist.previewRotationClockwise().checkCollision(rightborderlist))
     {
         figlist.rotateClockwise();
     }
