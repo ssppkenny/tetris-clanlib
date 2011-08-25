@@ -27,7 +27,7 @@ public:
     bool checkCollisionLeftSide(BorderList borderlist);
     bool checkCollisionDown(BorderList borderlist);
     bool checkCollisionUp(BorderList borderlist);
-    bool checkCollision(BorderList borderlist);
+    bool checkCollision(BorderList& borderlist);
     void reset();
     void setStablePosition();
     CL_Colorf getColor();

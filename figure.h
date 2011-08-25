@@ -14,7 +14,7 @@ public:
     void moveLeft(float shift);
     void moveRight(float shift);
     void draw(CL_GraphicContext gc);
-    void rotateClockwise(std::pair<float, float> center);
+    std::pair<float, float> rotateClockwise(std::pair<float, float> center);
     Figure previewRotationClockwise(std::pair<float, float> center);
     Figure previewRotationCounterClockwise(std::pair<float, float> center);
     void rotateCounterClockwise(std::pair<float, float> center);

@@ -43,7 +43,7 @@ void Figure::moveRight(float shift)
     xpos += shift;
 }
 
-void Figure::rotateClockwise(std::pair<float, float> center)
+std::pair<float, float> Figure::rotateClockwise(std::pair<float, float> center)
 {
     float x = xpos - center.first;
     float y = ypos + 32.0f - center.second;
@@ -54,6 +54,8 @@ void Figure::rotateClockwise(std::pair<float, float> center)
 
     xpos = x + center.first;
     ypos = y + center.second;
+
+    return std::pair<float, float>(xpos, ypos);
 
 
 }

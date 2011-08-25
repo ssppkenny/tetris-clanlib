@@ -40,6 +40,7 @@ FigureList::FigureList(FigureList & ref)
     std::cout << "After copy constructor i = " << i << std::endl;
 
     fl = flnew;
+    center = ref.center;
 
 }
 
@@ -128,6 +129,8 @@ void FigureList::reset()
           center.first = start + 32.0f;
           center.second = 32.0f;
         default:
+          center.first = start + 32.0f;
+          center.second = 32.0f;
           break;
 
     }
@@ -148,6 +151,7 @@ void FigureList::moveDown(float shift)
     {
         (*iter).moveDown(shift);
     }
+
     center.second += shift;
 }
 
@@ -188,6 +192,7 @@ void FigureList::draw(CL_GraphicContext gc)
 void FigureList::rotateClockwise()
 {
 
+    std::cout << "Rotate center.first = " << this->center.first  << " center.second = " << this->center.second  << std::endl;
     std::vector<Figure>::iterator iter;
 
     for (iter=fl.begin(); iter!=fl.end(); iter++ )
@@ -202,6 +207,7 @@ FigureList FigureList::previewRotationClockwise()
     std::vector<Figure> ret;
     std::vector<Figure>::iterator iter;
     FigureList ff(fl);
+    ff.center = center;
     ff.rotateClockwise();
     return ff;
 
@@ -227,7 +233,7 @@ void FigureList::rotateCounterClockwise()
 
 }
 
-bool FigureList::checkCollision(BorderList borderlist)
+bool FigureList::checkCollision(BorderList & borderlist)
 {
     std::vector<Figure>::iterator iter1;
     std::vector<Figure>::iterator iter2;
@@ -242,6 +248,9 @@ bool FigureList::checkCollision(BorderList borderlist)
         }
     }
     return false;
+
+
+
 }
 
 void FigureList::setStablePosition()
