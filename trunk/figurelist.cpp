@@ -90,47 +90,47 @@ void FigureList::reset()
     switch (random_integer)
     {
         case 0:
-          fig1 = new Figure(start + 32,0,clr);
-          fig2 = new Figure(start + 64,0,clr);
-          fig3 = new Figure(start + 96,0,clr);
-          fig4 = new Figure(start + 32,32,clr);
+          fig1 = new Figure(start + 32,-32,clr);
+          fig2 = new Figure(start + 64,-32,clr);
+          fig3 = new Figure(start + 96,-32,clr);
+          fig4 = new Figure(start + 32,0,clr);
           center.first = start + 32.0f;
-          center.second = 32.0f;
+          center.second = 0.0f;
           break;
         case 1:
-          fig1 = new Figure(start + 32,0,clr);
-          fig2 = new Figure(start + 64,0,clr);
-          fig3 = new Figure(start + 96,0,clr);
-          fig4 = new Figure(start + 96,32,clr);
+          fig1 = new Figure(start + 32,-32,clr);
+          fig2 = new Figure(start + 64,-32,clr);
+          fig3 = new Figure(start + 96,-32,clr);
+          fig4 = new Figure(start + 96,0,clr);
           center.first = start + 64.0f;
-          center.second = 32.0f;
+          center.second = 0.0f;
           break;
         case 2:
-          fig1 = new Figure(start + 32,0,clr);
-          fig2 = new Figure(start + 64,0,clr);
-          fig3 = new Figure(start + 96,0,clr);
-          fig4 = new Figure(start + 128,0,clr);
+          fig1 = new Figure(start + 32,-32,clr);
+          fig2 = new Figure(start + 64,-32,clr);
+          fig3 = new Figure(start + 96,-32,clr);
+          fig4 = new Figure(start + 128,-32,clr);
           center.first = start + 64.0f;
-          center.second = 32.0f;
+          center.second = 0.0f;
           break;
         case 3:
-          fig1 = new Figure(start + 32.0f, 0,clr);
-          fig2 = new Figure(start + 64.0f,0,clr);
-          fig3 = new Figure(start + 96.0f,0,clr);
-          fig4 = new Figure(start + 64.0f,32,clr);
+          fig1 = new Figure(start + 32.0f, -32,clr);
+          fig2 = new Figure(start + 64.0f,-32,clr);
+          fig3 = new Figure(start + 96.0f,-32,clr);
+          fig4 = new Figure(start + 64.0f,0,clr);
           center.first = start + 64.0f;
-          center.second = 32.0f;
+          center.second = 0.0f;
           break;
         case 4:
-          fig1 = new Figure(start + 0.0f,32,clr);
-          fig2 = new Figure(start + 64.0f,0,clr);
-          fig3 = new Figure(start + 32.0f,32,clr);
-          fig4 = new Figure(start + 64.0f,32,clr);
+          fig1 = new Figure(start + 0.0f,0,clr);
+          fig2 = new Figure(start + 64.0f,-32,clr);
+          fig3 = new Figure(start + 32.0f,0,clr);
+          fig4 = new Figure(start + 64.0f,0,clr);
           center.first = start + 32.0f;
-          center.second = 32.0f;
+          center.second = 0.0f;
         default:
           center.first = start + 32.0f;
-          center.second = 32.0f;
+          center.second = 0.0f;
           break;
 
     }
