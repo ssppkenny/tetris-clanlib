@@ -120,39 +120,44 @@ int Tetris::start(const std::vector<CL_String> &args)
         {
             FigureList newfl = figlist;
             newfl.setStablePosition();
-            bottomborderlist.addList(newfl.getFigureList());
-            //leftborderlist.addList(newfl.getFigureList());
-            //rightborderlist.addList(newfl.getFigureList());
+
             if (!finish)
             {
-                figlist.reset();
+                bottomborderlist.addList(newfl.getFigureList());
+                if (figlist.checkCollisionDown(bottomborderlist))
+                {
+                   figlist.reset();
+
+
+                }
+                else
+                {
+                    figlist.reset();
+                    figlist.clearFigureList();
+                }
+
             }
 
 
             if (figlist.checkCollisionDown(bottomborderlist))
             {
-                //std::cout << "Collision detected" << std::endl;
+
                 finish  = true;
+
             }
 
 
 
         }
 
-        if (finish == true)
-        {
-            leftborderlist.draw(gc);
-            rightborderlist.draw(gc);
-            bottomborderlist.draw(gc);
-
-        }
-        else
+        if (finish == false  && !figlist.checkCollisionDown(bottomborderlist))
         {
             figlist.draw(gc);
-            leftborderlist.draw(gc);
-            rightborderlist.draw(gc);
-            bottomborderlist.draw(gc);
         }
+
+         leftborderlist.draw(gc);
+         rightborderlist.draw(gc);
+         bottomborderlist.draw(gc);
 
 
 

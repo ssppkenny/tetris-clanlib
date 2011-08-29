@@ -189,6 +189,11 @@ void FigureList::draw(CL_GraphicContext gc)
     }
 }
 
+void FigureList::clearFigureList()
+{
+    fl.clear();
+}
+
 void FigureList::rotateClockwise()
 {
 

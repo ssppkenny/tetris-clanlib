@@ -33,6 +33,7 @@ public:
     CL_Colorf getColor();
     void setColor(CL_Colorf);
     bool checkPosition();
+    void clearFigureList();
 };
 
 
