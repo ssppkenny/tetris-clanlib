@@ -181,6 +181,15 @@ void Tetris::on_input_up(const CL_InputEvent &key, const CL_InputState &state)
         quit = true;
     }
 
+
+    if(key.str == "r")
+    {
+         figlist.reset();
+         bottomborderlist.init(640.0f);
+         linesRemoved = 0;
+         finish = false;
+    }
+
     if (key.id == CL_KEY_CONTROL)
     {
         figlist.drop(bottomborderlist);
