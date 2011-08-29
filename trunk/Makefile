@@ -4,7 +4,7 @@ OBJF = Sources/tetris.o Sources/precomp.o Sources/program.o Sources/figure.o Sou
 #LIBS=clanApp clanDisplay clanCore clanGL1
 LIBS=clanApp clanDisplay clanCore clanSWRender
 
-include ../../Makefile.conf
+include ./Makefile.conf
 
 # EOF #
 # test
