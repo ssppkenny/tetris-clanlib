@@ -107,7 +107,7 @@ void BorderList::removeLine(int i)
 
     if (i != -1)
     {
-        std::cout << "10 elements found, ret = " << i << std::endl;
+    //        std::cout << "10 elements found, ret = " << i << std::endl;
         for (iter=fence.begin(); iter!=fence.end(); iter++ )
         {
             if ((*iter).ypos != i || (*iter).ypos == 640)
