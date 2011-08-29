@@ -202,14 +202,14 @@ void Tetris::on_input_up(const CL_InputEvent &key, const CL_InputState &state)
     }
 
 
-    if(key.id == CL_KEY_LEFT && !figlist.checkCollisionLeftSide(leftborderlist) && !figlist.checkCollisionLeftSide(bottomborderlist))
+    if(key.id == CL_KEY_LEFT && !figlist.checkCollisionLeftSide(leftborderlist) && !figlist.checkCollision(bottomborderlist, -1))
     {
         figlist.moveLeft(32.0f);
     }
 
     //figlist.previewRotationClockwise().checkCollisionRightSide(rightborderlist);
 
-    if(key.id == CL_KEY_RIGHT && !figlist.checkCollisionRightSide(rightborderlist) && !figlist.checkCollisionRightSide(bottomborderlist))
+    if(key.id == CL_KEY_RIGHT && !figlist.checkCollisionRightSide(rightborderlist) &&  !figlist.checkCollision(bottomborderlist, 1))
     {
 
         figlist.moveRight(32.0f);

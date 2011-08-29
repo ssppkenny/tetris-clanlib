@@ -238,7 +238,7 @@ void FigureList::rotateCounterClockwise()
 
 }
 
-bool FigureList::checkCollision(BorderList & borderlist)
+bool FigureList::checkCollision(BorderList & borderlist, int direction)
 {
     std::vector<Figure>::iterator iter1;
     std::vector<Figure>::iterator iter2;
@@ -246,7 +246,7 @@ bool FigureList::checkCollision(BorderList & borderlist)
     {
         for (iter2=borderlist.fence.begin(); iter2!=borderlist.fence.end(); iter2++ )
         {
-            if ((*iter1).checkCollision(*iter2))
+            if ((*iter1).checkCollision(*iter2, direction))
             {
                 return true;
             }
