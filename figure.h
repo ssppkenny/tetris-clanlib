@@ -23,7 +23,7 @@ public:
     bool checkCollisionLeftSide(Figure fig);
     bool checkCollisionDown(Figure fig);
     bool checkCollisionUp(Figure fig);
-    bool checkCollision(Figure fig);
+    bool checkCollision(Figure fig, int direction);
     void setColor(CL_Colorf color);
     CL_Colorf getColor();
 };

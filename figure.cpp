@@ -166,7 +166,9 @@ if ((int)xpos <= (int)x && (int)x <= (int)xpos + 32 && (int)ypos <= (int)y && (i
 if (collision == true)
 {
     float xpos_new = xpos + 0.1f;
-    if (fabs(xpos_new +32 -fig.xpos) * fabs(ypos + 32 - fig.ypos) > 0)
+    
+	std::cout << xpos_new +32 << " " << fig.xpos + 64  << " " << ypos + 32 <<  " " << fig.ypos << std::endl; 
+    if (fabs(xpos_new + 32 -(fig.xpos + 64) ) * fabs(ypos + 32 - fig.ypos) > 0)
     {
         collision = true;
     }
@@ -232,6 +234,8 @@ if ((int)xpos <= (int)x && (int)x <= (int)xpos + 32 && (int)ypos <= (int)y && (i
 if (collision == true)
 {
     float xpos_new = xpos - 0.1f;
+
+	std::cout << xpos_new +32 << " " << fig.xpos  << " " << ypos + 32 <<  " " << fig.ypos << std::endl; 
     if (abs(xpos_new +32 -fig.xpos) * abs(ypos + 32 - fig.ypos) > 0)
     {
         collision = true;
@@ -424,19 +428,28 @@ void Figure::setStablePosition()
     ypos = x * 32;
 }
 
-bool Figure::checkCollision(Figure fig)
+bool Figure::checkCollision(Figure fig, int direction)
 {
     float x1 = xpos;
     float y1 = ypos;
 
     float x2 = fig.xpos;
     float y2 = fig.ypos;
+    bool collision = false;
 
-    if ( fabs(x1 - x2) < 32.0f || fabs(y1 - y2) < 32.0f )
+    if (direction == -1 && xpos == fig.xpos + 32 && fabs(ypos - fig.ypos) <= 32.0f ) // Left
     {
-
-        return true;
+       std::cout << xpos << " " << fig.xpos  + 32 << std::endl; 
+       collision = true;
     }
 
-    return false;
+    if (direction == 1 && xpos + 32 == fig.xpos && fabs(ypos - fig.ypos) <= 32.0f )  // Right
+    {
+       std::cout << xpos + 32 << " " << fig.xpos << std::endl; 
+
+      collision = true;
+    }
+
+
+    return collision;
 }
