@@ -299,7 +299,7 @@ if (collision == true)
 {
     float ypos_new = ypos + 0.1f;
 
-    std::cout << "xpos = " << xpos << " ypos = " << ypos << " fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
+    //std::cout << "xpos = " << xpos << " ypos = " << ypos << " fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
 
     if (fabs(xpos + 32.0f - fig.xpos) * fabs(ypos_new + 32.0f - fig.ypos) >= 1 && xpos <= fig.xpos)
     {
@@ -312,7 +312,7 @@ if (collision == true)
         collision = false;
     }
 
-     std::cout << "The Values = " << fabs(xpos + 32.0f - fig.xpos) << " " <<  fabs(ypos_new + 32.0f - fig.ypos)  << std::endl;
+     //std::cout << "The Values = " << fabs(xpos + 32.0f - fig.xpos) << " " <<  fabs(ypos_new + 32.0f - fig.ypos)  << std::endl;
 
 }
 
@@ -375,7 +375,7 @@ if (collision == true)
 {
     float ypos_new = ypos - 0.1f;
 
-    std::cout << "xpos = " << xpos << " ypos = " << ypos << " fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
+  //  std::cout << "xpos = " << xpos << " ypos = " << ypos << " fig.xpos = " << fig.xpos << " fig.ypos = " << fig.ypos << std::endl;
 
     if (fabs(xpos + 32.0f - fig.xpos) * fabs(ypos_new + 32.0f - fig.ypos) >= 1 && xpos <= fig.xpos)
     {
@@ -388,7 +388,7 @@ if (collision == true)
         collision = false;
     }
 
-     std::cout << "The Values = " << fabs(xpos + 32.0f - fig.xpos) << " " <<  fabs(ypos_new + 32.0f - fig.ypos)  << std::endl;
+   //  std::cout << "The Values = " << fabs(xpos + 32.0f - fig.xpos) << " " <<  fabs(ypos_new + 32.0f - fig.ypos)  << std::endl;
 
 }
 

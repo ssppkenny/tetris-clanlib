@@ -24,7 +24,7 @@ FigureList::FigureList(std::vector<Figure> fv)
 
 FigureList::FigureList(FigureList & ref)
 {
-    std::cout << "Copy constructor" << std::endl;
+    //std::cout << "Copy constructor" << std::endl;
     std::vector<Figure> flnew;
 
     std::vector<Figure>::iterator iter;
@@ -37,7 +37,7 @@ FigureList::FigureList(FigureList & ref)
         i++;
     }
 
-    std::cout << "After copy constructor i = " << i << std::endl;
+    //std::cout << "After copy constructor i = " << i << std::endl;
 
     fl = flnew;
     center = ref.center;
@@ -54,11 +54,11 @@ void FigureList::reset()
     fl.clear();
     srand((unsigned)time(0));
     int random_integer = rand()%5;
-    std::cout << random_integer << std::endl;
+    //std::cout << random_integer << std::endl;
     srand((unsigned)time(0));
     int rnd_integer = rand()%4;
 
-    std::cout << rnd_integer << std::endl;
+    //std::cout << rnd_integer << std::endl;
     clr = CL_Colorf::grey;
     switch (rnd_integer)
     {
@@ -192,7 +192,7 @@ void FigureList::draw(CL_GraphicContext gc)
 void FigureList::rotateClockwise()
 {
 
-    std::cout << "Rotate center.first = " << this->center.first  << " center.second = " << this->center.second  << std::endl;
+    //std::cout << "Rotate center.first = " << this->center.first  << " center.second = " << this->center.second  << std::endl;
     std::vector<Figure>::iterator iter;
 
     for (iter=fl.begin(); iter!=fl.end(); iter++ )

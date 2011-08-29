@@ -131,7 +131,7 @@ int Tetris::start(const std::vector<CL_String> &args)
 
             if (figlist.checkCollisionDown(bottomborderlist))
             {
-                std::cout << "Collision detected" << std::endl;
+                //std::cout << "Collision detected" << std::endl;
                 finish  = true;
             }
 
@@ -182,7 +182,7 @@ void Tetris::on_input_up(const CL_InputEvent &key, const CL_InputState &state)
     }
 
 
-    if(key.str == "r")
+    if(key.str == "r" && finish == true)
     {
          figlist.reset();
          bottomborderlist.init(640.0f);
