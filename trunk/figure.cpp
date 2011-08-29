@@ -26,6 +26,7 @@ Figure::Figure(float x, float y, CL_Colorf color)
 void Figure::draw(CL_GraphicContext gc)
 {
     CL_Draw::fill(gc, CL_Rectf(xpos, ypos, 32.0f+xpos, 32.0f+ypos), clr);
+    CL_Draw::box(gc, CL_Rectf(xpos, ypos, 32.0f+xpos, 32.0f+ypos), CL_Colorf(0.0f, 0.0f, 0.0f));
 }
 
 void Figure::moveDown(float shift)
