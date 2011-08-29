@@ -4,6 +4,7 @@ void BottomBorderList::init(float coord)
 {
     Figure *fig;
 
+    fence.clear();
     for (int i = 0; i < 10; i++)
     {
        fig = new Figure(i * 32.0f, coord);
