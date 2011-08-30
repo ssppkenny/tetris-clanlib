@@ -134,6 +134,7 @@ int Tetris::start(const std::vector<CL_String> &args)
                 {
                     figlist.reset();
                     figlist.clearFigureList();
+
                 }
 
             }
@@ -150,14 +151,28 @@ int Tetris::start(const std::vector<CL_String> &args)
 
         }
 
+        leftborderlist.draw(gc);
+         rightborderlist.draw(gc);
+         bottomborderlist.draw(gc);
+
         if (finish == false  && !figlist.checkCollisionDown(bottomborderlist))
         {
             figlist.draw(gc);
         }
+        else
+        {
+             if (linesRemoved < 5)
+                    {
+                        font.draw_text(gc, 10,40, "You Lost", CL_Colorf::black);
+                    }
+                    else
+                    {
+                        font.draw_text(gc, 10,40, "You Won", CL_Colorf::black);
+                    }
 
-         leftborderlist.draw(gc);
-         rightborderlist.draw(gc);
-         bottomborderlist.draw(gc);
+        }
+
+
 
 
 
