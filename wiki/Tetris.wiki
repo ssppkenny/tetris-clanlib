@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Description
 
 = Tetris with Clanlib =
 
@@ -7,15 +7,15 @@ I always wanted to create a game of Tetris. This time the game is almost ready t
 
 Installation on Windows
 
-1. Download the Visual Studio 2010 Project together with include and library files
-2. Unpack the project and libraries
-3. Open the project in VS2010
-4. Check the location of Includes and Libs.
-5. Compile and run
+# Download the Visual Studio 2010 Project together with include and library files
+# Unpack the project and libraries
+# Open the project in VS2010
+# Check the location of Includes and Libs.
+# Compile and run
 
 Installation on Linux
 
-1. Download the source file from www.clanlib.org
-2. run configure, make, make install
-3. svn checkout the project
-4. make
+# Download the source file from www.clanlib.org
+# run configure, make, make install
+# svn checkout the project
+# make
