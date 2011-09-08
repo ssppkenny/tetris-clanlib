@@ -7,15 +7,15 @@ I always wanted to create a game of Tetris. This time the game is almost ready t
 
 Installation on Windows
 
-# Download the Visual Studio 2010 Project together with include and library files
-# Unpack the project and libraries
-# Open the project in VS2010
-# Check the location of Includes and Libs.
-# Compile and run
+  # Download the Visual Studio 2010 Project together with include and library files
+  # Unpack the project and libraries
+  # Open the project in VS2010
+  # Check the location of Includes and Libs.
+  # Compile and run
 
 Installation on Linux
 
-# Download the source file from www.clanlib.org
-# run configure, make, make install
-# svn checkout the project
-# make
+  # Download the source file from www.clanlib.org
+  # run configure, make, make install
+  # svn checkout the project
+  # make
