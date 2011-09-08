@@ -1,4 +1,4 @@
-#summary Description
+#summary A Game for all Ages
 
 = Tetris with Clanlib =
 
