@@ -15,9 +15,9 @@ Installation on Windows
 Installation on Linux
 
   # Download the source file from www.clanlib.org
-  # run configure, make, make install
-  # svn checkout the project
-  # make
+  # svn checkout the project or download the tarball, unpack
+  # run configure, make
+
 
 Playing the game
   # Left Ctrl fall
