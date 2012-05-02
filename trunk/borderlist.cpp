@@ -98,9 +98,30 @@ int BorderList::getLineNumberToDelete()
 }
 
 
-
 void BorderList::removeLine(int i)
+
 {
+    
+    
+   class is_equal_to_i
+   {
+      int m_i;
+      public:
+        is_equal_to_i(int i) {
+           m_i = i;
+        }
+        bool operator() (Figure& fig) {
+         if (fig.ypos == m_i && fig.ypos != 640)
+           return true;
+         else
+           return false;
+
+    }
+
+   };
+
+
+
     std::vector<Figure>::iterator iter;
 
     std::vector<Figure> newfence;
@@ -108,14 +129,21 @@ void BorderList::removeLine(int i)
     if (i != -1)
     {
     //        std::cout << "10 elements found, ret = " << i << std::endl;
-        for (iter=fence.begin(); iter!=fence.end(); iter++ )
-        {
-            if ((*iter).ypos != i || (*iter).ypos == 640)
-            {
-                newfence.push_back(*iter);
-            }
-        }
-      for (iter=newfence.begin(); iter!=newfence.end(); iter++ )
+   //     for (iter=fence.begin(); iter!=fence.end(); iter++ )
+   //     {
+   //         if ((*iter).ypos != i || (*iter).ypos == 640)
+   //         {
+   //             newfence.push_back(*iter);
+   //         }
+   //     }
+
+
+     std::vector<Figure>::iterator newend = std::remove_if(fence.begin(), fence.end(), is_equal_to_i(i));
+     fence.erase(newend, fence.end());
+   
+
+
+      for (iter=fence.begin(); iter!=fence.end(); iter++ )
       {
            if ((*iter).ypos != 640 && (*iter).ypos < i)
            {
@@ -124,7 +152,7 @@ void BorderList::removeLine(int i)
 
 
       }
-      fence = newfence;
+      // fence = newfence;
      }
 
 }
