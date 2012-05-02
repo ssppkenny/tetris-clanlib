@@ -121,6 +121,21 @@ void BorderList::removeLine(int i)
    };
 
 
+   class apply_move
+   {
+      int m_i;
+      public:
+       apply_move(int i) {
+           m_i = i;
+        }
+        void operator() (Figure& fig) {
+         if (fig.ypos != m_i && fig.ypos < m_i)
+           fig.ypos += 32;
+
+    }
+
+   };
+
 
     std::vector<Figure>::iterator iter;
 
@@ -143,15 +158,19 @@ void BorderList::removeLine(int i)
    
 
 
-      for (iter=fence.begin(); iter!=fence.end(); iter++ )
-      {
-           if ((*iter).ypos != 640 && (*iter).ypos < i)
-           {
-               (*iter).ypos += 32;
-           }
+ //     for (iter=fence.begin(); iter!=fence.end(); iter++ )
+ //     {
+ //          if ((*iter).ypos != 640 && (*iter).ypos < i)
+ //          {
+ //              (*iter).ypos += 32;
+ //          }
 
 
-      }
+ //     }
+
+
+     std::for_each(fence.begin(), fence.end(), apply_move(i));
+
       // fence = newfence;
      }
 
